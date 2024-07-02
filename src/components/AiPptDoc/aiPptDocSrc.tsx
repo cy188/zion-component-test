@@ -4,35 +4,17 @@ export interface AiPptDocArgs {
   code: string;
 }
 
-export const genAiPptDocSrc = ({
-  appkey,
-  channel,
-  code,
-}: AiPptDocArgs) => `<html>
+export const genAiPptDocSrc = () => `<html>
   <head>
     <script src="https://aippt-domestic.aippt.com/static/js/aippt-iframe-sdk.js?xxx=3bb"></script>
 
     <script>
-      (async function xx() {
-        try {
-          await AipptIframe.show({
-            appkey: '${appkey}',
-            channel: '${channel}',
-            code: '${code}',
-            editorModel: true,
-            scene_auth: false,
-            onMessage(eventType, data) {
-              console.log(eventType, data);
-            },
-          });
-        } catch (e) {
-          console.log(e);
-        }
-        console.log(AipptIframe);
-      })();
+      
     </script>
   </head>
 
-  <body></body>
+  <body>
+    <h1> hello11 </h1>
+  </body>
 </html>
 `;
